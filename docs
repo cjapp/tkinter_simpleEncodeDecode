@@ -1,0 +1,25 @@
+
+Simple Encryptor with GUI
+
+The project will be a simple encrypter with a basic user interface.
+Fill in the upper textbox on the righthand side with text, the bottom should update when text is entered.
+You can open a pre existing text file to encode or decode.
+You can also select a file to save your results to using the Save option.
+
+Features for the project:
+
+* Two boolean fields(encryption and decryption), they are exclusive and swap when pressed.
+* A dragdown field(select the method of encryption to use)
+      Different methods to include at somepoint:
+        Ceasar Cipher
+        Rot10
+      
+* A Text field, for the text to encrpyt/decrypt.
+
+* A result field that will contain the text that is translated via the different methods
+
+* An open and save option for using premade text and for saving the results for later usage.
+
+Bonus:
+Add the option to translate text that is not a part of the alphabet.
+
