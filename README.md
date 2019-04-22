@@ -15,13 +15,13 @@ included with python3.
 It should also be noted that I developed this application using a
 linux machine, so it is untested with other os's.
 
-##Using the program##
+## Using the program ##
 
 Launch the program as you would normally for a python program:
 
-**Linux Command Line:**
+** Linux Command Line: **
 
-`<  python3 main.py >`
+` python3 main.py `
 
 You will notice 2 textboxes on the right side of the newly opened window,
 the one on the top is the input box, the one below is the result box that 
