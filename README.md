@@ -1,5 +1,5 @@
 
-#Simple Ecryptor using Python and Tkinter#
+# Simple Ecryptor using Python and Tkinter #
 
 This project is a simple program that lets the user enter 
 text or load a file to ecode using the provided methods, 

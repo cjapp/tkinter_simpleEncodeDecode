@@ -1,25 +1,75 @@
 
-Simple Encryptor with GUI
+Simple Ecryptor using Python and Tkinter
 
-The project will be a simple encrypter with a basic user interface.
-Fill in the upper textbox on the righthand side with text, the bottom should update when text is entered.
-You can open a pre existing text file to encode or decode.
-You can also select a file to save your results to using the Save option.
+This project is a simple program that lets the user enter 
+text or load a file to ecode using the provided methods, 
+or some they can add if they are interested. They can also
+save the results to a file they specify so they can decode
+it later.
 
-Features for the project:
+The program uses python3, so that needs to be installed on the
+user's computer before using the program. There are no outside
+dependencies required from what I understand, tkinter and os are
+included with python3.
 
-* Two boolean fields(encryption and decryption), they are exclusive and swap when pressed.
-* A dragdown field(select the method of encryption to use)
-      Different methods to include at somepoint:
-        Ceasar Cipher
-        Rot10
-      
-* A Text field, for the text to encrpyt/decrypt.
+It should also be noted that I developed this application using a
+linux machine, so it is untested with other os's.
 
-* A result field that will contain the text that is translated via the different methods
+Using the program
 
-* An open and save option for using premade text and for saving the results for later usage.
+Launch the program as you would normally for a python program:
 
-Bonus:
-Add the option to translate text that is not a part of the alphabet.
+Linux Command Line:
+
+python3 main.py
+
+You will notice 2 textboxes on the right side of the newly opened window,
+the one on the top is the input box, the one below is the result box that 
+translates the input text depending on the options selected on the left 
+side of the window. As input is entered, the result box will update 
+accordingly and display the result.
+
+The left side of the window has two radiobuttons labeled as encode and 
+decode. Depending on what the input is (encoded text or readable), simply 
+clicking the mode the user wants to use will set the application to that mode. 
+The lower listbox lists the current method options to choose from; selecting 
+one will allow the program to use that method when decoding or encoding the 
+input text provided.
+
+The menu at the top left of the window holds the open save and exit options.
+Selecting open will allow the user to select a file to use as input text. 
+Selecting save will allow the user to select a file to save the results to. 
+Exit simply has the user close the program.
+
+Try it out, see what you can encode and decode, try creating your own 
+encode and decode methods aside from the default methods I have made.
+
+
+Creating your own method
+
+So to include your own methods, you need to create an encode and decode function
+that takes 1 argument and returns a string of the transformed code
+
+For example:
+  def myEncodeMethod(input_txt)
+    :
+    : code involved with transforming code
+    : return transformed code
+
+  def myDecodeMethod(input_txt)
+    :
+    : code involved with transforming code
+    : return transformed code
+
+Next, you need to include the methods in the global methods list, 
+seen at top (g_methods). Use the following examples to create
+methods.
+
+  mt.Method("Name_of_Method",EncodeFunc,DecodeFunc),
+
+When the application is run, your method(s) should show up in the application
+and transform the text accordingly.
+
+
+
 

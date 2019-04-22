@@ -7,6 +7,12 @@ class Method():
         self.encode = encode
         self.decode = decode
 
+
+#
+# METHODS FUNCTIONS BELOW
+#
+#
+
 def ceasarMethod(offset, content):
     encrypted = []
     c = 'i'

@@ -5,6 +5,18 @@ import methods as mt #class Method():
 
 import os
 
+
+g_methods = [
+        #
+        # ADD YOUR METHODS HERE, add comma afterwards
+        #
+        mt.Method('Ceasar', mt.enCeasar, mt.deCeasar),
+        mt.Method('Rot10', mt.enRot, mt.deRot)
+        ]
+
+
+
+
 """
 The Main application class of the
     encoder decoder program
@@ -22,12 +34,9 @@ class MainApplication(tk.Frame):
 
     """
     def createMethods(self):
-        self.methods.append(mt.Method('Ceasar', mt.enCeasar, mt.deCeasar))
-        self.methods.append(mt.Method('Rot10', mt.enRot, mt.deRot))
+        global g_methods
 
-        #ADD NEW METHODS HERE#
-
-        for i in self.methods:
+        for i in g_methods:
             self.methodList.insert(tk.END,i.name)
 
     """
@@ -78,13 +87,14 @@ class MainApplication(tk.Frame):
     Args: The application calling the function
     """
     def displayResult(self):
+        global g_methods
         p_itext = self.input_text.get("1.0",tk.END)
         translation = ""
 
         if self.currentMode.get() == 1:
-            translation = "".join(self.methods[self.methodList.index(tk.ACTIVE)].encode(p_itext))
+            translation = "".join(g_methods[self.methodList.index(tk.ACTIVE)].encode(p_itext))
         elif self.currentMode.get() == 2:
-            translation = "".join(self.methods[self.methodList.index(tk.ACTIVE)].decode(p_itext))
+            translation = "".join(g_methods[self.methodList.index(tk.ACTIVE)].decode(p_itext))
 
         self.result_text.delete("1.0",tk.END)
         self.result_text.insert(tk.END,translation)
@@ -132,7 +142,6 @@ class MainApplication(tk.Frame):
         self.methodList = tk.Listbox(self.leftFrame)
         self.methodList.pack()
 
-        self.methods = []
         self.createMethods()
         self.methodList.selection_set(first = 0)
 
@@ -149,6 +158,7 @@ class MainApplication(tk.Frame):
 
 
 if __name__ == "__main__":
+    g_methods = sorted(g_methods, key=lambda x: x.name)
     root = tk.Tk()
     MainApplication(root).pack(side="top", fill="both", expand=True)
     root.mainloop()
